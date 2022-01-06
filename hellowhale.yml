@@ -1,9 +1,9 @@
-apiVersion: apps/v1
+  apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-blue-whale
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: hello-whale-app
@@ -32,8 +32,6 @@ spec:
   selector:
     app: hello-whale-app
     version: blue
-  type: NodePort
   ports:
-  - nodePort: 31113
     port: 88
     targetPort: 88
